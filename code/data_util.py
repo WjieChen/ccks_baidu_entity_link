@@ -24,7 +24,7 @@ def new_alias():
     id_alias = {}
     entity_id={}
     id_entity={}
-    with open('original_data/kb_data', 'r') as f:
+    with open('original_data/kb_data', 'r', encoding='utf-8') as f:
         for line in f:
             temDict = json.loads(line)
             subject = temDict['subject']
@@ -49,7 +49,7 @@ def new_alias():
                 else:
                     entity_id[n] = set()
                     entity_id[n].add(subject_id)
-    with open('original_data/train.json') as f:
+    with open('original_data/train.json',encoding='utf-8') as f:
         entity_alias_num={}
         for line in f:
             temDict = json.loads(line)
@@ -171,7 +171,7 @@ def kb_processing():
     id_type={}
     id_entity={}
 
-    with open('original_data/kb_data', 'r') as f:
+    with open('original_data/kb_data', 'r', encoding='utf-8') as f:
         for line in f:
             temDict = json.loads(line)
             subject=temDict['subject']
